@@ -1,0 +1,41 @@
+extends layout 
+block content 
+    section.container 
+        include header 
+        article.item 
+            -if (results.length)
+                table.tabla-pelis 
+                    tr
+                        th Id 
+                        th Titulo 
+                        th Año 
+                        th Puntuacion 
+                        th Poster 
+                        th(colspan="2")
+                            form(action="/agregar", method="get") 
+                                input.button.add(type="submit", value="Agregar")
+                    each pelicula in results 
+                        tr 
+                            td #{pelicula.MovieID}
+                            td #{pelicula.Title}
+                            td #{pelicula.ReleaseMovie}
+                            td #{pelicula.Rating}
+                            td 
+                                img.poster(src=`${pelicula.Image}`, alt=`${pelicula.Title}`)
+                            td 
+                                form(action=`/editar/${pelicula.MovieID}`, method="GET") 
+                                    input.button.edit(type="submit", value="Editar")
+                            td 
+                                form(action=`/eliminar/${pelicula.MovieID}`, method="POST") 
+                                    input.button.delete(type="button", value="Eliminar")
+                script. 
+                    document.addEventListener(`click`,(e)=>{
+                        if(e.target.matches(`.delete`)){
+                            const respuesta=confirm(`La pelicula se eliminará de la lista?`)
+                            return (respuesta)? e.target.parentNode.submit():false
+                        }
+                    })
+            -else
+                p.error Ahún no hay peliculas en la lista.
+                form( method="get",action="/agregar") 
+                    input.button.add(type="submit", value="Agregar")

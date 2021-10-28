@@ -1,0 +1,24 @@
+extends layout 
+block content 
+    section.container 
+        include header
+        .item 
+            form(action="/", method="POST") 
+                fieldset 
+                    .container.p1 
+                        label.item.i-b.v-top.ph3.p_25.right(for="MovieID") IMDB id: 
+                        input.item.i-b.v-top.ph9.p_25#MovieID(type="text", name="MovieID",required)
+                    .container.p1 
+                        label.item.i-b.v-top.ph3.p_25.right(for="Title") Titulo: 
+                        input.item.i-b.v-top.ph9.p_25#Title(type="text", name="Title",required)
+                    .container.p1 
+                        label.item.i-b.v-top.ph3.p_25.right(for="ReleaseMovie") Año: 
+                        input.item.i-b.v-top.ph9.p_25#ReleaseMovie(type="text", name="ReleaseMovie",required)
+                    .container.p1 
+                        label.item.i-b.v-top.ph3.p_25.right(for="Rating") Calificacion:
+                        input.item.i-b.v-top.ph9.p_25#Rating(type="text", name="Rating",required)
+                    .container.p1 
+                        label.item.i-b.v-top.ph3.p_25.right(for="Image") Poster: 
+                        input.item.i-b.v-top.ph9.p_25#Image(type="text", name="Image",required)
+                    .container.p1 
+                        input.item.ph4.mauto.button.add(type="submit", value="Agregar")

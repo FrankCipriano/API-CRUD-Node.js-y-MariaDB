@@ -1,0 +1,63 @@
+html{
+    background-color: #131610;
+}
+
+a,
+h1,
+label{
+    color: #397a33;
+}
+a:hover{
+    opacity: .75;
+}
+/*-ESTILOS A LA VISTA INDEX*/
+.logo{
+    display: block;
+    margin: 1rem auto;
+    width: 450px;
+    height: 150px;
+    background: url("../assets/logo.svg") no-repeat center;
+    background-size: contain;
+}
+.error{
+    font-size: 2rem;
+    padding: 1rem;
+    color:bisque;
+}
+.poster{
+    max-width: 100px;
+}
+.tabla-pelis{
+    width: 100%;
+}
+.tabla-pelis td, .tabla-pelis th{
+    padding: 1rem;
+}
+.tabla-pelis tr:first-child{
+    background-color: #292623;
+    color: #80BD01;
+}
+.tabla-pelis tr:nth-child(even){
+    background-color: #CCC;
+}
+.tabla-pelis tr:nth-child(odd):not(:first-child){
+    background-color: #EEE;
+}
+.button{
+    padding: .5rem 1rem;
+    color: #FFF;
+    background-color: #80BD01;
+    cursor: pointer;
+}
+.button:hover{
+    opacity: .75;
+}
+.add{
+    background-color: #0B0;
+}
+.edit{
+    background-color: rgb(9, 9, 77);
+}
+.delete{
+    background-color: rgb(102, 8, 8);
+}

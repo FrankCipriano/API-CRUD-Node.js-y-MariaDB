@@ -1,0 +1,25 @@
+extends layout 
+block content 
+    section.container 
+        include header
+        .item 
+            form(action=`/actualizar/${pelicula.MovieID}`, method="POST") 
+                fieldset 
+                    .container.p1 
+                        label.item.i-b.v-top.ph3.p_25.right(for="MovieID") IMDB id: 
+                        input.item.i-b.v-top.ph9.p_25#ID(type="text", name="ID",value=`${pelicula.MovieID}`,disabled ,required)
+                        input#MovieID(type="hidden", name="MovieID",value=`${pelicula.MovieID}`,required)
+                    .container.p1 
+                        label.item.i-b.v-top.ph3.p_25.right(for="Title") Titulo: 
+                        input.item.i-b.v-top.ph9.p_25#Title(type="text", name="Title",value=`${pelicula.Title}`,required)
+                    .container.p1 
+                        label.item.i-b.v-top.ph3.p_25.right(for="ReleaseMovie") Año: 
+                        input.item.i-b.v-top.ph9.p_25#ReleaseMovie(type="text", name="ReleaseMovie",value=`${pelicula.ReleaseMovie}`,required)
+                    .container.p1 
+                        label.item.i-b.v-top.ph3.p_25.right(for="Rating") Calificacion:
+                        input.item.i-b.v-top.ph9.p_25#Rating(type="text", name="Rating",value=`${pelicula.Rating}`,required)
+                    .container.p1 
+                        label.item.i-b.v-top.ph3.p_25.right(for="Image") Poster: 
+                        input.item.i-b.v-top.ph9.p_25#Image(type="text", name="Image",value=`${pelicula.Image}`,required)
+                    .container.p1 
+                        input.item.ph4.mauto.button.edit(type="submit", value="Editar")
